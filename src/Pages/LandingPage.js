@@ -9,8 +9,8 @@ import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 
 const BoxContainer = styled.div`
-  width: 100%;
-  min-height: 884px;
+  width: 390px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
@@ -21,9 +21,8 @@ const BoxContainer = styled.div`
 `;
 
 const TopContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  height: 7em;
+  width: 390px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -32,7 +31,7 @@ const TopContainer = styled.div`
 `;
 
 const BackDrop = styled(motion.div)`
-  width: 160%;
+  width: 120%;
   height: 550px;
   position: absolute;
   display: flex;
@@ -50,7 +49,7 @@ const BackDrop = styled(motion.div)`
 `;
 
 const HeaderContainer = styled.div`
-  width: 100%;
+  width: 390px;
   display: flex;
   flex-direction: column;
 `;
@@ -74,7 +73,7 @@ const SmallText = styled.h5`
 `;
 
 const InnerContainer = styled.div`
-  width: 100%;
+  width: 390px;
   display: flex;
   flex-direction: column;
 `;

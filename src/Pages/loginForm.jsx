@@ -20,16 +20,17 @@ export function LoginForm(props) {
       <FormContainer>
         <Questionaire>What is your name?</Questionaire>
         <Input type="text" placeholder="Name" />
+        <Marginer direction="vertical" margin={30} />
         <label id="income">
         <Marginer direction="vertical" margin={25} />
         <input type="radio" id="income" onClick={switchToSignup} name="incomeQuery" value="Has Income" />
-        I draw a monthly income</label>
+        ⠀I draw a monthly income</label>
 
-        <Marginer direction="vertical" margin={7} />
+        <Marginer direction="vertical" margin={10} />
 
         <label id="failure">
         <input type="radio" id="failure" onClick={switchToNoIncome} name="incomeQuery" value="Failure" />
-        I do not monthly income</label>
+        ⠀I do not monthly income</label>
       </FormContainer>
       
       {/* <Marginer direction="vertical" margin={10} />

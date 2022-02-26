@@ -16,12 +16,13 @@ import { Slider } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
 export function SignupForm(props) {
+  const navigate = useNavigate();
+
   const { switchToSignin } = useContext(AccountContext);
   var save = 50;
   var invest = 20; 
   var spend = 30;
   var total = 0;
-  const navigate = useNavigate();
   const submitHandler = () => {
     navigate("/profile");
   };
@@ -45,8 +46,8 @@ export function SignupForm(props) {
     document.getElementById("total").innerHTML = "Your monthly budget is: $" + total;
   };
 
-  const updateSave = (save) => {
-
+  const navAway = () => {
+    navigate('/CalendarPage');
   };
 
 
@@ -62,7 +63,7 @@ export function SignupForm(props) {
         
 
         <namedSlider>Save</namedSlider> 
-        <Slider defaultValue={save} onChange={updateSave} aria-label="Default" valueLabelDisplay="auto" />
+        <Slider defaultValue={save} aria-label="Default" valueLabelDisplay="auto" />
         <input value={save}></input>
         <Marginer direction="vertical" margin={10} />
 
