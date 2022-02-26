@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import classes from "./CalendarPage.module.css";
 import NavBar from "../Components/NavBar";
 import CalendarItem from "../Components/CalendarItem";
+import ReminderModal from "../Components/ReminderModal";
+
 
 export default function CalendarPage() {
   const [change, setChange] = useState(0);
+  const [modal, setModal] = useState(false);
 
   const totalBudget = 560;
   const numberOfDays = 28;
@@ -25,6 +28,23 @@ export default function CalendarPage() {
   const [dailyBudgetList, setDailyBudgetList] = useState(
     initialDailyBudgetList
   );
+  
+  let counter = 0;
+  const checkAlert = () =>{
+    for (let i =0; i<dailyBudgetList.length; i++){
+      if(dailyBudgetList[i]>target){
+        counter++;
+        if(counter>1){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  useEffect(()=>{
+      setModal(checkAlert());
+  },[dailyBudgetList])
 
   const onEditHandler = (day, value) => {
     console.log("day: ", day);
@@ -57,6 +77,12 @@ export default function CalendarPage() {
   return (
     <div>
       <NavBar />
+      {console.log(modal)}
+      <ReminderModal 
+        show={modal}
+        onHide={() => setModal(false)}
+      />
+
       <div className={classes.root}>
         <div className={classes.textbody}>
           <h1 className={classes.title}>February 2022</h1>

@@ -23,7 +23,7 @@ export default function ReminderModal(props) {
         <Modal.Body>
             <Alert variant={"danger"} className={classes.text}>
             <img className={classes.image} src={warning} />
-            <strong>It seems like you have been over-spending the past 2 days!</strong> 
+            <strong>It seems like you have been over-spending the past few days!</strong> 
             </Alert>
             <p>Keep to your daily target or spend less. You can do it!</p>
         </Modal.Body>
