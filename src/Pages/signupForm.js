@@ -1,4 +1,4 @@
-import React, { useContext, Component, cloneElement } from "react";
+import React, { useContext, useState, Component, cloneElement } from "react";
 import {
   BoldLink,
   BoxContainer,
@@ -19,33 +19,32 @@ export function SignupForm(props) {
   const navigate = useNavigate();
 
   const { switchToSignin } = useContext(AccountContext);
-  var save = 50;
-  var invest = 20; 
-  var spend = 30;
-  var total = 0;
+  // var spend = 50;
+  var invest = 30; 
+  var save = 20;
+  const [total, setTotal] = useState(0);
+
   const submitHandler = () => {
     navigate("/calendar");
   };
 
-  // const balancer = () =>{
-  //   if(save>50){
-  //     const difference = save-50
-  //     invest = invest + difference/2
-  //     spend = spend + difference/2
-  //   }else{
-  //     const difference = save-50
-  //     invest = difference/2
-  //     total = difference/2
-  //   }
-  // }
-
   const updateTotal = (monthlyInc) => {
-    console.log(typeof(monthlyInc))
-    console.log(monthlyInc)
-    total = monthlyInc.target.value
-    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(save/100);
+    // console.log(typeof(monthlyInc))
+    // console.log(monthlyInc)
+    setTotal(monthlyInc.target.value)
+    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(spend/100);
   };
 
+  const [spend, setSpend] = useState(50);
+  
+  const changeSpend = (event, spend) => {
+    setSpend(spend);
+    console.log("spend: ", spend);
+    console.log("total: ", total);
+
+    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(spend/100);
+  };
+  
 
   return (
     <BoxContainer>
@@ -57,18 +56,19 @@ export function SignupForm(props) {
         <Marginer direction="vertical" margin={20} />
 
         <Questionaire>Budgeting Mix</Questionaire>
-        
 
+        <namedSlider>Spend</namedSlider> 
+        <Slider value={spend} onChange={changeSpend} aria-label="Default" valueLabelDisplay="auto" /> 
+        
         <namedSlider>Save</namedSlider> 
         <Slider defaultValue={save} aria-label="Default" valueLabelDisplay="auto" />
         <Marginer direction="vertical" margin={10} />
-
-        <namedSlider>Spend</namedSlider> 
-        <Slider defaultValue={spend} aria-label="Default" valueLabelDisplay="auto" /> 
         
         <namedSlider>Invest</namedSlider>       
         <Marginer direction="vertical" margin={10} />
         <Slider defaultValue={invest} aria-label="Default" valueLabelDisplay="auto" />
+
+        
 
         <Marginer direction="vertical" margin={15} />
         <Questionaire id="total"></Questionaire>
