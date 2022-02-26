@@ -5,10 +5,25 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function EditModal(props) {
+  const benchmark = 10;
   const [input, setInput] = useState(0);
+
+  const allHandlers = () => {
+    expenseHandler();
+    changeHandler();
+  };
+
   const expenseHandler = () => {
     props.setExpense(input);
   };
+
+  const changeHandler = () => {
+    const change = benchmark - input;
+    props.change(change);
+  };
+
+  
+
   return (
     <div className={classes.root}>
       <input
@@ -17,7 +32,7 @@ export default function EditModal(props) {
         onInput={(e) => setInput(e.target.value)}
         type="text"
       />
-      <Button onClick={expenseHandler}>Edit</Button>
+      <Button onClick={allHandlers}>Edit</Button>
       <Button onClick={props.onClose}>Close</Button>
     </div>
   );

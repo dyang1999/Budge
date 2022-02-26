@@ -20,7 +20,7 @@ export default function CalendarItem(props) {
   return (
     <div>
       {modal ? (
-        <EditModal onClose={modalHandler} setExpense={expenseHandler} />
+        <EditModal onClose={modalHandler} setExpense={expenseHandler} change={props.change}/>
       ) : (
         <></>
       )}
