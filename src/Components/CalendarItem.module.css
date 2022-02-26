@@ -1,4 +1,4 @@
-.root {
+/* .root {
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   display: flex;
@@ -6,9 +6,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-  width: 53px;
+  width: 50px;
   height: 80px;
-}
+} */
 
 .root1 {
   border-radius: 0.8rem;
@@ -18,9 +18,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-  width: 53px;
-  height: 80px;
-  background-color: rgb(51, 169, 75);
+  width: 54px;
+  height: 70px;
+  background-color: #c7d690;
 }
 
 .root2 {
@@ -31,9 +31,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-  width: 53px;
-  height: 80px;
-  background-color: rgb(208, 96, 96);
+  width: 54px;
+  height: 70px;
+  background-color: #d4afab;
 }
 .root3 {
   border-radius: 0.8rem;
@@ -43,9 +43,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-  width: 53px;
-  height: 80px;
-  background-color: grey;
+  width: 54px;
+  height: 70px;
+  background-color: #91BAD6;
 }
 
 .text1 {
