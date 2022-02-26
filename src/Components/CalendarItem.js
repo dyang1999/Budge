@@ -17,10 +17,24 @@ export default function CalendarItem(props) {
     setModal((prev) => !prev);
   };
 
+  const updateChange = () => {
+    if (props.data > 16) {
+      setExpense(expense-(props.expenseChange / 12));
+    }
+  };
+
+  useEffect(()=>{
+    updateChange()
+  },[props.expenseChange])
+
   return (
     <div>
       {modal ? (
-        <EditModal onClose={modalHandler} setExpense={expenseHandler} change={props.change}/>
+        <EditModal
+          onClose={modalHandler}
+          setExpense={expenseHandler}
+          change={props.onChange}
+        />
       ) : (
         <></>
       )}

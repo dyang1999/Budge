@@ -23,10 +23,16 @@ export default function CalendarPage() {
         </div>
         <h2 className={classes.text}>Sun Mon Tue Wed Thu Fri Sat</h2>
         <div className={classes.calendar}>
-          <CalendarItem data={30} budget={"-"} />
-          <CalendarItem data={31} budget={"-"} />
-          {data.map((item) => (
-            <CalendarItem data={item} key={item.key} change={setChange} />
+          <div className={classes.cell} >
+            <p className={classes.text1}>30</p>
+            <p className={classes.text2}>$ - </p>
+          </div>
+          <div className={classes.cell}>
+            <p className={classes.text1}>31</p>
+            <p className={classes.text2}>$ - </p>
+          </div>
+          {data.map((item, change) => (
+            <CalendarItem data={item} key={item} onChange={setChange} expenseChange={change} />
           ))}
         </div>
       </div>
