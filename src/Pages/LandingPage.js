@@ -18,8 +18,9 @@ export default function LandingPage() {
     <div>
       <NavBar />
       <div className={classes.root}>
-        <h1 className={classes.title}>TheSmartGrocer</h1>
+        <h1 className={classes.title}>Budge</h1>
         <div className={classes.search}>
+          <p>What is your name</p>
           <form
             className={classes.form}
             id="filterForm"
@@ -33,10 +34,21 @@ export default function LandingPage() {
             />
           </form>
         </div>
-        <h2 className={classes.subtitle}>
-          Find out if your favorite groceries are currently in stock and compare
-          prices between items!
-        </h2>
+        <div className={classes.search}>
+          <p>What is your income</p>
+          <form
+            className={classes.form}
+            id="filterForm"
+            onSubmit={submitHandler}
+          >
+            <input
+              className={classes.searchBar}
+              value={input}
+              onInput={(e) => setInput(e.target.value)}
+              type="text"
+            />
+          </form>
+        </div>
         <img className={classes.image} src={trolley} />
       </div>
     </div>

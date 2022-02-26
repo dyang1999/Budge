@@ -6,20 +6,31 @@ import { useNavigate } from "react-router-dom";
 export default function NavBar() {
   const navigate = useNavigate();
 
-  const cartHandler = () => {
+  const profileHandler = () => {
     navigate("/cart");
   };
 
-  const homeHandler = () => {
-    navigate("/landing");
+  const calendarHandler = () => {
+    navigate("/calendar");
+  };
+
+  const settingsHandler = () => {
+    navigate("/settings");
   };
 
   return (
     <div className={classes.root}>
-      <h1 onClick={homeHandler} className={classes.logo}>TheSmartGrocer</h1>
-      <h2 className={classes.link} onClick={cartHandler}>
-        🛒
-      </h2>
+      <h1 onClick={profileHandler} className={classes.link}>
+        😊
+      </h1>
+      <h1>|</h1>
+      <h1 className={classes.link} onClick={calendarHandler}>
+        🗓
+      </h1>
+      <h1>|</h1>
+      <h1 className={classes.link} onClick={settingsHandler}>
+        ⚙️
+      </h1>
     </div>
   );
 }

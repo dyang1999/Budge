@@ -7,9 +7,8 @@ import {
 
 //pages
 import LandingPage from "./Pages/LandingPage";
-import SearchPage from "./Pages/SearchPage";
-import CartPage from "./Pages/CartPage";
-import ItemPage from "./Pages/ItemPage";
+import CalendarPage from "./Pages/CalendarPage";
+import SettingsPage from "./Pages/SettingsPage";
 
 function App() {
   return (
@@ -17,9 +16,8 @@ function App() {
 
     <Routes>
       <Route exact path="/landing" element={<LandingPage/>} />
-      <Route exact path="/results/:keyword" element={<SearchPage/>} />
-      <Route exact path="/:item" element={<ItemPage/>} />
-      <Route exact path="/cart" element={<CartPage/>} />
+      <Route exact path="/calendar" element={<CalendarPage/>} />
+      <Route exact path="/settings" element={<SettingsPage/>} />
       <Route path="/*" element={<Navigate to='/landing'/>}/>        
       
     </Routes>
