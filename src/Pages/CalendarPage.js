@@ -4,10 +4,7 @@ import NavBar from "../Components/NavBar";
 import CalendarItem from "../Components/CalendarItem";
 
 export default function CalendarPage() {
-  const data = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28,
-  ];
+  
 
   const [change, setChange] = useState(0);
 
@@ -38,6 +35,7 @@ export default function CalendarPage() {
     let totalChange = target-value + change
     setChange(totalChange)
     setDailyBudgetList((prev) => {
+      console.log(prev);
       let newList = [...prev];
       newList[day] = value;
       newList = updateDailyList(day, newList);
@@ -83,6 +81,7 @@ export default function CalendarPage() {
             <CalendarItem
               key={index}
               budget={budget}
+              target={target}
               day={index}
               onEditHandler={onEditHandler}
             />

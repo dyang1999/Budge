@@ -5,16 +5,14 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function EditModal(props) {
-  
+
   const [input, setInput] = useState(0);
 
   const onEditHandler = () => {
     props.onEditHandler(props.day, input)
     props.onClose()
+    props.onGrey(true)
   }
-
-
-  
 
   return (
     <div className={classes.root}>
