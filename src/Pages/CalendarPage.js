@@ -13,6 +13,7 @@ export default function CalendarPage() {
 
   const totalBudget = 280;
   const numberOfDays = 28;
+  const target = totalBudget/numberOfDays
 
   const getDailyBudget = (numberOfDays) => {
     return totalBudget / numberOfDays;
@@ -29,33 +30,35 @@ export default function CalendarPage() {
   const [dailyBudgetList, setDailyBudgetList] = useState(
     initialDailyBudgetList
   );
-  
+
+
   const onEditHandler = (day, value) => {
-    console.log("day: ", day)
-    console.log("value: ", value)
-    setDailyBudgetList(prev => {
-      let newList = [...prev]
-      newList[day] = value
-      newList = updateDailyList(day, newList)
-      return newList
-    })
-  }
-
-
+    console.log("day: ", day);
+    console.log("value: ", value);
+    let totalChange = target-value + change
+    setChange(totalChange)
+    setDailyBudgetList((prev) => {
+      let newList = [...prev];
+      newList[day] = value;
+      newList = updateDailyList(day, newList);
+      return newList;
+    });
+  };
 
   const updateDailyList = (dayChanged, newList) => {
-    let totalBudgetLeft = totalBudget
-    for (let x=0; x<=dayChanged; x++){
-      totalBudgetLeft -= newList[x]
+    let totalBudgetLeft = totalBudget;
+    for (let x = 0; x <= dayChanged; x++) {
+      totalBudgetLeft -= newList[x];
     }
-    for (let i=dayChanged+1; i<numberOfDays; i++){
-      let newDailyBudget = totalBudgetLeft / numberOfDays;
+
+    for (let i = dayChanged + 1; i < numberOfDays; i++) {
+      let newDailyBudget = totalBudgetLeft / (numberOfDays - dayChanged - 1);
       newList[i] = newDailyBudget.toFixed(2);
     }
     return newList;
-  }
+  };
 
-  console.log(dailyBudgetList)
+  console.log(dailyBudgetList);
   return (
     <div>
       <NavBar />
@@ -77,21 +80,13 @@ export default function CalendarPage() {
             <p className={classes.text2}>$ - </p>
           </div>
           {dailyBudgetList.map((budget, index) => (
-            <CalendarItem 
-            key={index}
-            budget={budget} 
-            day={index} 
-            onEditHandler = {onEditHandler}
+            <CalendarItem
+              key={index}
+              budget={budget}
+              day={index}
+              onEditHandler={onEditHandler}
             />
           ))}
-          {/* {data.map((item, change) => (
-            <CalendarItem
-              data={item}
-              key={item}
-              onChange={setChange}
-              expenseChange={change}
-            />
-          ))} */}
         </div>
       </div>
     </div>
