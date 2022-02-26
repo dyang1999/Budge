@@ -15,7 +15,7 @@ export function NoIncome(props) {
   const { switchToSignin } = useContext(AccountContext);
   const navigate = useNavigate();
   const submitHandler = () => {
-    navigate("/profile");
+    navigate("/calendar");
   };
 
   return (

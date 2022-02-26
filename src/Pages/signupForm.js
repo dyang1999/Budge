@@ -24,7 +24,7 @@ export function SignupForm(props) {
   var spend = 30;
   var total = 0;
   const submitHandler = () => {
-    navigate("/profile");
+    navigate("/calendar");
   };
 
   // const balancer = () =>{
@@ -43,11 +43,7 @@ export function SignupForm(props) {
     console.log(typeof(monthlyInc))
     console.log(monthlyInc)
     total = monthlyInc.target.value
-    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total;
-  };
-
-  const navAway = () => {
-    navigate('/CalendarPage');
+    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(save/100);
   };
 
 

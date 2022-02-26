@@ -6,7 +6,7 @@ import CalendarItem from "../Components/CalendarItem";
 export default function CalendarPage() {
   const [change, setChange] = useState(0);
 
-  const totalBudget = 280;
+  const totalBudget = 560;
   const numberOfDays = 28;
   const target = totalBudget / numberOfDays;
 
@@ -64,7 +64,7 @@ export default function CalendarPage() {
             <h2 style={change >= 0 ? { color: "Green", fontWeight:"bold" } : { color: "Red", fontWeight:"bold"}}>
               ${change}
             </h2>
-            <h2 className={classes.textbody}>from target</h2>
+            <h2 className={classes.textbody}>from monthly target of ${totalBudget}</h2>
           </div>
           <div className={classes.inline}>
             <h2>Daily target this month</h2>
