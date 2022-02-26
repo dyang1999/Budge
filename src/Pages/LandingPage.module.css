@@ -1,0 +1,41 @@
+.root {
+  font-family: 'Knewave';
+
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.title {
+  padding-top: 5rem;
+  font-size: 3rem;
+  color: rgb(226,159,101);
+  color: linear-gradient(66deg, rgba(226,159,101,1) 39%, rgba(247,217,196,1) 100%);
+}
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.image {
+  bottom: 1rem;
+  position: absolute;
+}
+.searchBar {
+  width: 95%;
+  height: 3rem;
+  border-radius: 3rem;
+  border-color: rgb(226,159,101);
+  border-color: linear-gradient(66deg, rgba(226,159,101,1) 39%, rgba(247,217,196,1) 100%);
+  font-size: 20px;
+}
+input {
+  padding-left: 15px;
+}
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 100%;
+}

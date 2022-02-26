@@ -1,0 +1,31 @@
+.root {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card {
+  background: rgb(226, 159, 101);
+  background: linear-gradient(
+    66deg,
+    rgba(226, 159, 101, 1) 39%,
+    rgba(247, 217, 196, 1) 100%
+  );
+
+  border-radius: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bottomText {
+  font-style: italic;
+  font-size: 1.7rem;
+  padding-top: 1rem;
+}
+.reccs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
