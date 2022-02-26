@@ -4,15 +4,31 @@
   padding-left: 2rem;
   padding-right: 2rem;
   align-items: baseline;
-  font-size: 1rem;
   background-color: #0D2054;
-  color: white;
+  height: 70px;
 }
 .link {
-  font-size: 3rem;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  height: auto;
+  width: auto;
 }
+
 .logo {
+  height: 32px;
+  width: 32px;
+  margin-top: 10px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.text{
+  color: white;
+}
+
+.text2{
   color: #f2aa42;
-  font-family: 'Roboto';
-  font-size: 1.2rem;
 }
