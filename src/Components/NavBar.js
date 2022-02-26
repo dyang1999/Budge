@@ -7,7 +7,7 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   const profileHandler = () => {
-    navigate("/cart");
+    navigate("/profile");
   };
 
   const calendarHandler = () => {
