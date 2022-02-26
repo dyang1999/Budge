@@ -6,11 +6,11 @@ import { useState, useEffect } from "react";
 export default function CalendarItem(props) {
   const totalBudget = 280;
 
-  const [expense, setExpense] = useState(10);
+  // const [expense, setExpense] = useState(10);
 
-  const expenseHandler = (test) => {
-    setExpense(test);
-  };
+  // const expenseHandler = (test) => {
+  //   setExpense(test);
+  // };
 
   const [modal, setModal] = useState(false);
   const modalHandler = () => {
@@ -19,28 +19,33 @@ export default function CalendarItem(props) {
 
   const updateChange = () => {
     if (props.data > 16) {
-      setExpense(expense-(props.expenseChange / 12));
+      // setExpense(expense-(props.expenseChange / 12));
     }
   };
 
-  useEffect(()=>{
-    updateChange()
-  },[props.expenseChange])
+  // useEffect(()=>{
+  //   updateChange()
+  // },[props.expenseChange])
 
   return (
     <div>
       {modal ? (
         <EditModal
           onClose={modalHandler}
-          setExpense={expenseHandler}
+          onEditHandler = {props.onEditHandler}
+          day = {props.day}
+          // setExpense={expenseHandler}
           change={props.onChange}
         />
       ) : (
         <></>
       )}
-      <div className={classes.root} onClick={modalHandler}>
-        <p className={classes.text1}>{props.data}</p>
-        <p className={classes.text2}>${expense}</p>
+      <div
+        className={classes.root}
+        onClick={modalHandler}
+      >
+        <p className={classes.text1}>{props.day+1}</p>
+        <p className={classes.text2}>${props.budget}</p>
       </div>
     </div>
   );
