@@ -8,6 +8,9 @@ const data = [
   23, 24, 25, 26, 27, 28,
 ];
 const change = 2;
+const totalBudget = 280;
+const dailyBudget = 280 / 28;
+
 export default function CalendarPage() {
   return (
     <div>
@@ -18,11 +21,13 @@ export default function CalendarPage() {
           <div className={classes.inline}>
             <h2>${change}</h2> <h2 className={classes.textbody}>from target</h2>
           </div>
-        </div>  
-
+        </div>
+        <h2 className={classes.text}>Sun Mon Tue Wed Thu Fri Sat</h2>
         <div className={classes.calendar}>
+          <CalendarItem data={30} budget={"-"}/>
+          <CalendarItem data={31} budget={"-"}/>
           {data.map((item) => (
-            <CalendarItem data={item} key={item.key} />
+            <CalendarItem data={item} budget={dailyBudget} key={item.key} />
           ))}
         </div>
       </div>

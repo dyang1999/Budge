@@ -14,7 +14,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 2%;
+}
+
+.text{
+  text-align: center;
+  letter-spacing: 5px;
+  word-spacing: 8px;
+  font-size: 12px;
   margin-top: 5%;
 }
