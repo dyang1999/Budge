@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import classes from "./LandingPage.module.css";
-import { useNavigate } from "react-router-dom";
 import { LoginForm } from "./loginForm";
 import { SignupForm } from "./signupForm";
 import { NoIncome } from "./noIncome";
@@ -105,7 +104,6 @@ export default function LandingPage() {
   const [input, setInput] = useState("");
   const [isExpanded, setExpanded] = useState(false);
 
-  const navigate = useNavigate();
   const [active, setActive] = useState("signin");
 
   const playExpandingAnimation = () => {
@@ -136,9 +134,7 @@ export default function LandingPage() {
     }, 400);
   };
 
-  const submitHandler = () => {
-    navigate(`/Results/${input}`);
-  };
+
   
   const contextValue = { switchToSignup, switchToSignin, switchToNoIncome };
 

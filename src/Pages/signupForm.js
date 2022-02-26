@@ -13,6 +13,7 @@ import { Marginer } from "../marginer";
 //import Slider from "../Components/slider";
 import { AccountContext } from "./accountContext";
 import { Slider } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
@@ -20,6 +21,10 @@ export function SignupForm(props) {
   var invest = 20; 
   var spend = 30;
   var total = 0;
+  const navigate = useNavigate();
+  const submitHandler = () => {
+    navigate("/profile");
+  };
 
   // const balancer = () =>{
   //   if(save>50){
@@ -77,7 +82,7 @@ export function SignupForm(props) {
 
       </FormContainer>
       <Marginer direction="vertical" margin={25} />
-      <SubmitButton type="submit">Signup</SubmitButton>
+      <SubmitButton type="submit" onClick={submitHandler}>Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Clicked wrongly?
