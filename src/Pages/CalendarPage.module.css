@@ -3,9 +3,10 @@
 }
 
 .title{
-  font-weight: bold;
+  font-weight: bolder;
   font-family: 'Roboto';
   font-size: 60px;
+  color: #0d2054;
 }
 .textbody {
   margin-left: 5%;
