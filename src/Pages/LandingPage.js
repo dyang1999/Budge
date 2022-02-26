@@ -145,7 +145,7 @@ export default function LandingPage() {
           {active === "signin" && (
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
-              <HeaderText>to Budge</HeaderText>
+              <HeaderText>to Budge.IT</HeaderText>
             </HeaderContainer>
           )}
           {active === "signup" && (
