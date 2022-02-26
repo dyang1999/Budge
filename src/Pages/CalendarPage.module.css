@@ -1,13 +1,20 @@
 .root {
-  margin-top: 10%;
+  margin-top: 3%;
+}
+
+.title{
+  font-weight: bold;
+  font-family: 'Roboto';
+  font-size: 60px;
 }
 .textbody {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 .inline {
+  font-family: 'Roboto';
   display: flex;
   flex-direction: row;
-  margin-top: 3%;
+  margin: 0;
 }
 
 .calendar {
@@ -37,7 +44,8 @@
   justify-content: center;
   margin-top: 1%;
   width: 53px;
-  height: 80px;
+  height: 70px;
+  background-color: #E5E4E2;
 }
 .text1 {
   display: flex;

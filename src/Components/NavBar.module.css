@@ -6,6 +6,9 @@
   align-items: baseline;
   background-color: #0D2054;
   height: 70px;
+  position:absolute;
+  bottom:0;
+  width: 100%
 }
 .link {
   font-size: 0.8rem;

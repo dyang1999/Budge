@@ -4,13 +4,11 @@ import NavBar from "../Components/NavBar";
 import CalendarItem from "../Components/CalendarItem";
 
 export default function CalendarPage() {
-  
-
   const [change, setChange] = useState(0);
 
   const totalBudget = 280;
   const numberOfDays = 28;
-  const target = totalBudget/numberOfDays
+  const target = totalBudget / numberOfDays;
 
   const getDailyBudget = (numberOfDays) => {
     return totalBudget / numberOfDays;
@@ -28,12 +26,11 @@ export default function CalendarPage() {
     initialDailyBudgetList
   );
 
-
   const onEditHandler = (day, value) => {
     console.log("day: ", day);
     console.log("value: ", value);
-    let totalChange = target-value + change
-    setChange(totalChange)
+    let totalChange = target - value + change;
+    setChange(totalChange);
     setDailyBudgetList((prev) => {
       console.log(prev);
       let newList = [...prev];
@@ -62,9 +59,18 @@ export default function CalendarPage() {
       <NavBar />
       <div className={classes.root}>
         <div className={classes.textbody}>
-          <h1>February 2022</h1>
+          <h1 className={classes.title}>February 2022</h1>
           <div className={classes.inline}>
-            <h2>${change}</h2> <h2 className={classes.textbody}>from target</h2>
+            <h2 style={change >= 0 ? { color: "Green", fontWeight:"bold" } : { color: "Red", fontWeight:"bold"}}>
+              ${change}
+            </h2>
+            <h2 className={classes.textbody}>from target</h2>
+          </div>
+          <div className={classes.inline}>
+            <h2>Daily target this month</h2>
+            <h2 className={classes.textbody} style={{ color: "#0D2054", fontWeight:"bold" }}>
+              ${target}
+            </h2>
           </div>
         </div>
         <h2 className={classes.text}>Sun Mon Tue Wed Thu Fri Sat</h2>
