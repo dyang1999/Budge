@@ -3,6 +3,7 @@ import classes from "./EditModal.module.css";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import piggy from "../Assets/full bank.png"
 
 export default function EditModal(props) {
   const [input, setInput] = useState(0);
@@ -15,6 +16,7 @@ export default function EditModal(props) {
 
   return (
     <div className={classes.root}>
+      <img src={piggy} className={classes.img}/>
       <div className={classes.inline}>
         <h1 className={classes.text}>$</h1>
         <input
