@@ -33,7 +33,7 @@ export default function EditModal(props) {
           className={classes.btn}
           style={{marginRight: "15px"}}
         >
-          Edit
+          Save
         </Button>
         <Button
           variant="outline-danger"

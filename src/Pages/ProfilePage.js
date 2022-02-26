@@ -16,19 +16,19 @@ export default function ProfilePage() {
   const monthData = [
   {
     name: 'Jan',
-    Expense: 500,
+    Expense: 590,
   },
   {
     name: 'Feb',
-    Expense: 510,
+    Expense: 530,
   },
   {
     name: 'Mar',
-    Expense: 525,
+    Expense: 570,
   },
   {
     name: 'Apr',
-    Expense: 534,
+    Expense: 580,
   },
   {
     name: 'May',
@@ -36,23 +36,23 @@ export default function ProfilePage() {
   },
   {
     name: 'Jun',
-    Expense: 612,
+    Expense: 632,
   },
   {
     name: 'Jul',
-    Expense: 533,
+    Expense: 550,
   },
   {
     name: 'Aug',
-    Expense: 564,
+    Expense: 588,
   },
   {
     name: 'Sep',
-    Expense: 512,
+    Expense: 510,
   },
   {
     name: 'Oct',
-    Expense: 603,
+    Expense: 663,
   },
   {
     name: 'Nov',
@@ -104,7 +104,7 @@ export default function ProfilePage() {
           
           <Row className={classes.top}>
               <p className={classes.title}>Feb 2022</p>
-              <p className={classes.text}>Target: $500 | Estimated Expense: $512</p>
+              <p className={classes.text}>Target: $560 | Current Estimated Expense: $572</p>
           </Row>
 
           <Row>
@@ -128,7 +128,7 @@ export default function ProfilePage() {
                       <YAxis type="number" domain={[0, 'dataMax']} hide/>
                       <Tooltip content={data}></Tooltip>
                       <Bar dataKey="Expense" fill="#0D2054"/>
-                      { ref ? <ReferenceLine y={500} stroke="#F2AA42" /> : null}
+                      { ref ? <ReferenceLine y={560} stroke="#F2AA42" /> : null}
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
