@@ -5,13 +5,14 @@
   padding-right: 2rem;
   align-items: baseline;
   font-size: 1rem;
+  background-color: #0D2054;
+  color: white;
 }
 .link {
   font-size: 3rem;
 }
 .logo {
-  color: rgb(226,159,101);
-  color: linear-gradient(66deg, rgba(226,159,101,1) 39%, rgba(247,217,196,1) 100%);
-  font-family: 'Knewave', cursive;
+  color: #f2aa42;
+  font-family: 'Roboto';
   font-size: 1.2rem;
 }
