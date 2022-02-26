@@ -30,7 +30,7 @@ export function LoginForm(props) {
 
         <label id="failure">
         <input type="radio" id="failure" onClick={switchToNoIncome} name="incomeQuery" value="Failure" />
-        ⠀I do not monthly income</label>
+        ⠀I do not draw a monthly income</label>
       </FormContainer>
       
       {/* <Marginer direction="vertical" margin={10} />

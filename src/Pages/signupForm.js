@@ -55,7 +55,6 @@ export function SignupForm(props) {
     <BoxContainer>
       <FormContainer>
         <Questionaire>What is your monthly income?</Questionaire>
-        <Input type="number" id="monthlyInc" onChange={updateTotal} placeholder="Monthly Income" />
 
         <Marginer direction="vertical" margin={20} />
 
@@ -64,22 +63,17 @@ export function SignupForm(props) {
 
         <namedSlider>Save</namedSlider> 
         <Slider defaultValue={save} aria-label="Default" valueLabelDisplay="auto" />
-        <input value={save}></input>
         <Marginer direction="vertical" margin={10} />
 
         <namedSlider>Spend</namedSlider> 
         <Slider defaultValue={spend} aria-label="Default" valueLabelDisplay="auto" /> 
-        <input value={spend}></input>
         
         <namedSlider>Invest</namedSlider>       
         <Marginer direction="vertical" margin={10} />
         <Slider defaultValue={invest} aria-label="Default" valueLabelDisplay="auto" />
-        <input value={invest}></input>
 
         <Marginer direction="vertical" margin={15} />
         <Questionaire id="total"></Questionaire>
-
-        {console.log(save)}
 
       </FormContainer>
       <Marginer direction="vertical" margin={25} />

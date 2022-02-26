@@ -22,12 +22,12 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 390px;
-  height: 250px;
+  height: 255px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 1.8em;
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 `;
 
 const BackDrop = styled(motion.div)`
