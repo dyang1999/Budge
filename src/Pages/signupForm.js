@@ -55,6 +55,8 @@ export function SignupForm(props) {
     <BoxContainer>
       <FormContainer>
         <Questionaire>What is your monthly income?</Questionaire>
+        <Input type="number" id="monthlyInc" onChange={updateTotal} placeholder="Monthly Income" />
+
 
         <Marginer direction="vertical" margin={20} />
 
