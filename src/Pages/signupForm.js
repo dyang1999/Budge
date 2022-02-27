@@ -23,25 +23,31 @@ export function SignupForm(props) {
   var invest = 30; 
   var save = 20;
   const [total, setTotal] = useState(0);
+  const [spend, setSpend] = useState(50);
 
   const submitHandler = () => {
     navigate("/calendar");
   };
 
   const updateTotal = (monthlyInc) => {
+    setSpend(spend);
     // console.log(typeof(monthlyInc))
-    // console.log(monthlyInc)
+    console.log("monthlyInc", monthlyInc.target.value)
+
     setTotal(monthlyInc.target.value)
-    document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(spend/100);
+    
+    console.log("spend: ", spend);
+    console.log("total: ", total);
+
+    document.getElementById("total").innerHTML = "Your monthly budget is: $" + monthlyInc.target.value*(spend/100);
+
   };
 
-  const [spend, setSpend] = useState(50);
   
   const changeSpend = (event, spend) => {
     setSpend(spend);
     console.log("spend: ", spend);
     console.log("total: ", total);
-
     document.getElementById("total").innerHTML = "Your monthly budget is: $" + total*(spend/100);
   };
   
