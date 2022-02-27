@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import classes from "./CalendarPage.module.css";
 import NavBar from "../Components/NavBar";
 import CalendarItem from "../Components/CalendarItem";
+import ReminderModal from "../Components/ReminderModal";
 
 export default function CalendarPage() {
   const [change, setChange] = useState(0);
+  const [modal, setModal] = useState(false);
 
   const totalBudget = 560;
   const numberOfDays = 28;
   const target = totalBudget / numberOfDays;
+
+  const [today, setToday] = useState(0);
 
   const getDailyBudget = (numberOfDays) => {
     return totalBudget / numberOfDays;
@@ -26,7 +30,20 @@ export default function CalendarPage() {
     initialDailyBudgetList
   );
 
+  const checkAlert = () => {
+    if(dailyBudgetList[today-1]>target && dailyBudgetList[today]>target){
+      return true;
+    }else{
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    setModal(checkAlert());
+  }, [dailyBudgetList]);
+
   const onEditHandler = (day, value) => {
+    setToday(day);
     console.log("day: ", day);
     console.log("value: ", value);
     let totalChange = target - value + change;
@@ -57,18 +74,32 @@ export default function CalendarPage() {
   return (
     <div>
       <NavBar />
+      {console.log(modal)}
+      <ReminderModal show={modal} onHide={() => setModal(false)} />
+
       <div className={classes.root}>
         <div className={classes.textbody}>
           <h1 className={classes.title}>February 2022</h1>
           <div className={classes.inline}>
-            <h2 style={change >= 0 ? { color: "Green", fontWeight:"bold" } : { color: "Red", fontWeight:"bold"}}>
+            <h2
+              style={
+                change >= 0
+                  ? { color: "Green", fontWeight: "bold" }
+                  : { color: "Red", fontWeight: "bold" }
+              }
+            >
               ${change}
             </h2>
-            <h2 className={classes.textbody}>from monthly target of ${totalBudget}</h2>
+            <h2 className={classes.textbody}>
+              from monthly target of ${totalBudget}
+            </h2>
           </div>
           <div className={classes.inline}>
             <h2>Daily target this month</h2>
-            <h2 className={classes.textbody} style={{ color: "#0D2054", fontWeight:"bold" }}>
+            <h2
+              className={classes.textbody}
+              style={{ color: "#0D2054", fontWeight: "bold" }}
+            >
               ${target}
             </h2>
           </div>

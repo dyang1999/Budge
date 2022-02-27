@@ -1,0 +1,12 @@
+.modal{
+    margin-top: 5vh;
+    height: 90vh;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.image{
+    height: 32px;
+    width: 32px;
+    margin-bottom: 6px;
+}
