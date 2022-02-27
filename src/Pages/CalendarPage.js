@@ -3,10 +3,12 @@ import classes from "./CalendarPage.module.css";
 import NavBar from "../Components/NavBar";
 import CalendarItem from "../Components/CalendarItem";
 import ReminderModal from "../Components/ReminderModal";
+import PositiveReminderModal from "../Components/PositiveReminderModal";
 
 export default function CalendarPage() {
   const [change, setChange] = useState(0);
   const [modal, setModal] = useState(false);
+  const [positiveModal, setPositiveModal] = useState(false);
 
   const totalBudget = 560;
   const numberOfDays = 28;
@@ -31,15 +33,30 @@ export default function CalendarPage() {
   );
 
   const checkAlert = () => {
-    if(dailyBudgetList[today-1]>target && dailyBudgetList[today]>target){
+    if (
+      dailyBudgetList[today - 1] > target &&
+      dailyBudgetList[today] > target
+    ) {
       return true;
-    }else{
+    } else {
+      return false;
+    }
+  };
+
+  const checkPositive = () => {
+    if (
+      dailyBudgetList[today - 1] > target &&
+      dailyBudgetList[today] <= target
+    ) {
+      return true;
+    } else {
       return false;
     }
   };
 
   useEffect(() => {
     setModal(checkAlert());
+    setPositiveModal(checkPositive());
   }, [dailyBudgetList]);
 
   const onEditHandler = (day, value) => {
@@ -76,6 +93,10 @@ export default function CalendarPage() {
       <NavBar />
       {console.log(modal)}
       <ReminderModal show={modal} onHide={() => setModal(false)} />
+      <PositiveReminderModal
+        show={positiveModal}
+        onHide={() => setPositiveModal(false)}
+      />
 
       <div className={classes.root}>
         <div className={classes.textbody}>
